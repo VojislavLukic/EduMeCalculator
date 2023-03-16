@@ -1,4 +1,6 @@
 import unittest
+import sys
+sys.path.insert(0, "../")
 import Calculator
 
 #### unit testing
@@ -8,7 +10,7 @@ class TestFunctions(unittest.TestCase):
 
     def setUp(self):
         self.a = 74543
-        self.b = 0
+        self.b = 6
 
 # test to ensure input variables are integers
     def test_if_integer(self):
@@ -27,7 +29,7 @@ class TestFunctions(unittest.TestCase):
     #     with self.assertRaises(ZeroDivisionError):
     #         #Calculator.divide_function_round(self.a,self.b)
 
-# tests for each of the three above functions
+# tests for each of the above functions
     def test_sum(self):
         result = Calculator.sum_function(self.a,self.b)
         self.assertEqual(result, self.a + self.b, "Sum function incorrect.")
